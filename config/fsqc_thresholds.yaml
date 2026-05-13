@@ -1,0 +1,90 @@
+# FSQC threshold configuration (2026-04-28)
+# Purpose: deterministic criteria for classifying FastSurfer QC metrics into OK or EXCLUDE.
+# Rationale notes reference the FSQC documentation (https://deep-mi.org/fsqc/dev/Functionality.html)
+# and internal longitudinal QC precedent (low SNR and topology issues render cortical thickness unreliable).
+
+version: "2026-04-28"
+notes: |
+  Criteria favor specificity: anything flagged here will be manually reviewed and either confirmed for
+  exclusion or promoted back to OK with justification in fsqc_decision_log.csv. No reruns are planned,
+  so EXCLUDE means the subject/timepoint is removed from downstream harmonization/analysis datasets.
+
+cohorts:
+  patients:
+    output_dir: /nfs/br1_prosjekt/ParkWest/user/2026vae/AmundEspen/pd_thesis/outputs/fsqc/patients_20260428
+  controls:
+    output_dir: /nfs/br1_prosjekt/ParkWest/user/2026vae/AmundEspen/pd_thesis/outputs/fsqc/controls_20260428
+
+metric_rules:
+  # Signal-to-noise expectations (orig/norm volumes). Use cohort z-score plus conservative floors based on observed distributions
+  # (BL WM SNR ≈18±3, 3Y/5Y ≈13±3; GM SNR ≈9 vs 6). Values below these minima or >3 SD below cohort mean are flagged.
+  - columns: [wm_snr_norm, wm_snr_orig]
+    min_absolute: 6.0
+    min_zscore: -3.0
+    reason: low_snr
+  - columns: [gm_snr_norm, gm_snr_orig]
+    min_absolute: 3.5
+    min_zscore: -3.0
+    reason: low_snr
+  # WM/GM contrast SNR should remain positive; values below ~3 typically indicate poor tissue contrast.
+  - columns: [con_lh_snr, con_rh_snr]
+    min_absolute: 3.0
+    min_zscore: -2.0
+    reason: low_contrast
+  # Talairach rotations far from zero usually signal gross misalignment. FSQC reports degrees; values > 10° flagged.
+  - columns: [rot_tal_x, rot_tal_y, rot_tal_z]
+    max_absolute: 10.0
+    reason: talairach_rotation
+  # Surface topology: holes/defects should be rare after FastSurfer longitudinal pipeline.
+  - columns: [lh_holes, rh_holes]
+    max_absolute: 5
+    reason: surface_holes
+  - columns: [lh_defects, rh_defects]
+    max_absolute: 0
+    reason: surface_defects
+  # Corpus callosum relative size captures fornix bleed-in. Values outside +/-3 SD flagged.
+  - columns: [cc_size]
+    min_zscore: -3.0
+    max_zscore: 3.0
+    reason: cc_outlier
+  # Topology-fix time spikes often accompany failed reconstructions (>600 seconds treated as suspicious).
+  - columns: [topo_lh, topo_rh]
+    max_absolute: 600
+    reason: topology_time
+
+outlier_rules:
+  # FSQC already aggregates anatomical outlier counts; any nonzero normative outlier or >3 sample-based outliers flagged.
+  - column: n_outliers_norms
+    max_absolute: 0
+    reason: anatomical_outlier_norms
+  - column: n_outliers_sample_param
+    max_absolute: 3
+    reason: anatomical_outlier_param
+  - column: n_outliers_sample_nonpar
+    max_absolute: 3
+    reason: anatomical_outlier_nonpar
+
+status_mapping:
+  # Default status is OK; if any rule triggers, status becomes EXCLUDE unless manually overridden in the decision log.
+  ok_label: OK
+  exclude_label: EXCLUDE
+
+reporting:
+  cohort_summary_metrics:
+    - wm_snr_norm
+    - gm_snr_norm
+    - con_lh_snr
+    - con_rh_snr
+    - cc_size
+    - n_outliers_norms
+  flag_priority:
+    - low_snr
+    - low_contrast
+    - surface_defects
+    - surface_holes
+    - anatomical_outlier_norms
+    - anatomical_outlier_param
+    - anatomical_outlier_nonpar
+    - talairach_rotation
+    - topology_time
+    - cc_outlier
