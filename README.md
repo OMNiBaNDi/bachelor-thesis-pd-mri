@@ -38,6 +38,8 @@ in two stages:
 - `pipeline_lib/` — the shared Python library used by the post-FSQC
   stages (subject-ID normalization, cohort discovery, ROI panel
   definitions, delta computation)
+- Stage B and Stage C analysis tables (ROI extractions, harmonized
+  panels, model results) and Stage C figures
 
 ### Not included
 
@@ -45,8 +47,19 @@ in two stages:
 - Converted NIfTI volumes
 - Full FastSurfer output trees
 - Full FSQC screenshot / dashboard directories
-- Stage A / Stage B / Stage C derived output tables and figures
-- Subject-level data
+- Stage A metadata tables (cohort roster, DICOM inventory, scanner
+  metadata, clinical covariates, merged metadata)
+- The two long-format LME input tables produced by Stage C
+  (`cohort_long_harmonized.csv` and `cohort_long_unharmonized.csv`)
+
+The Stage A tables and the two Stage C long-format LME input tables
+carry per-subject combinations of site, sex, age at baseline, batch,
+and dates or elapsed time on the same row. In a cohort this small
+(67 PD + 33 controls across three hospitals), these combinations act as
+quasi-identifiers, and the files are omitted on that basis. The
+published Stage B and Stage C tables retain the anonymous study
+identifier and the corresponding measurement or model output only,
+without demographic covariates on the same row.
 
 ## Thesis boundary
 
@@ -82,10 +95,14 @@ metadata/
   conversion_reports/
   qc/
   selection_logs/
+  analysis/
+    stage_b_extract/
+    stage_c_analyze/
 
 artifacts/
   fsqc_good_samples/
   fsqc_bad_samples/
+  analysis/
 
 scripts/
   copy/
@@ -95,30 +112,15 @@ scripts/
   fsqc/
   analysis/                                # post-FSQC pipeline
     pipeline_lib/
-      ids.py
-      cohort.py
-      constants.py
-      deltas.py
     stage_a_metadata/
-      00_cohort.py
-      01_dicom_inventory.py
-      02_scanner_metadata.py
-      03_clinical_covariates.py
-      04_merge_metadata.py
     stage_b_extract/
-      05_extract.py
     stage_c_analyze/
-      06_harmonize.py
-      07_analysis.py
   utils/
 
 runbook_bachelor_thesis.md
 README.md
 ```
 
-`scripts/analysis/` preserves the on-disk layout used on Gorina1
-(`pipeline_lib/` alongside `scripts/`) so imports of the form
-`from pipeline_lib.constants import ...` resolve correctly.
 
 ## Main workflow
 
@@ -225,8 +227,9 @@ age- and sex-adjusted Cohen's d at 5 years post-baseline.
 
 ### 8. Result summaries and figures
 
-Stage C-2 produces the CSV tables and figures on Gorina1. Outputs are
-not pushed to the repo. See runbook §15 for the full output list.
+Stage C-2 produces the result tables and figures. The published tables
+are in `metadata/analysis/stage_c_analyze/` and the figures are in
+`artifacts/analysis/`. See runbook §15 for the full output list.
 
 ## Why the script naming is uneven
 

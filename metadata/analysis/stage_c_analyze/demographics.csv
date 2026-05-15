@@ -1,0 +1,10 @@
+variable,PD,Control
+n,67,33
+age_at_BL_mean,65.1,63.4
+age_at_BL_sd,9.5,8.9
+sex_female,22,18
+sex_male,45,15
+follow_up_3Y_mean,3.05,2.60
+follow_up_3Y_sd,0.14,0.40
+follow_up_5Y_mean,5.08,4.64
+follow_up_5Y_sd,0.18,0.40

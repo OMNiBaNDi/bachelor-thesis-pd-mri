@@ -1,0 +1,2 @@
+subcortical: 12 features harmonized, batch R^2 0.0675 -> 0.0199, formula 'Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical'
+cortical: 12 features harmonized, batch R^2 0.1329 -> 0.0119, formula 'Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical'

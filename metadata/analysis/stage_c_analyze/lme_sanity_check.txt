@@ -1,0 +1,37 @@
+LME SANITY CHECK — Risk A: harmonization preservation
+
+ALL-ROI SUMMARY
+
+  Total ROIs compared:              12
+  ROIs with same β_interaction sign: 8 / 12
+  ROIs with opposite sign:           4 / 12
+  Pearson r (β_harm vs β_unharm):    0.770
+  |β_harm| / |β_unharm| median:      0.919  (IQR 0.751–1.397)
+  Harmonized FDR-tissue sig. ROIs:   4 / 12
+  …of those, same sign in unharm.:   3 / 4
+
+PER-ROI COMPARISON (sorted by Tissue, then |d_harm| desc.)
+
+ROI                       Tissue            β_harm    β_unharm   |H/U|  sign?   sig
+------------------------------------------------------------------------
+Amygdala                  subcortical   -9.281e-06  -5.151e-06    1.80      ✓    **
+Caudate                   subcortical   -1.341e-05  -1.496e-05    0.90      ✓    **
+Putamen                   subcortical   -2.128e-05  -2.306e-05    0.92      ✓    **
+Hippocampus               subcortical   -1.027e-05   1.295e-06    7.93      ✗     *
+Thalamus                  subcortical    4.902e-06   1.598e-05    0.31      ✓      
+Accumbens                 subcortical   -4.410e-07  -1.858e-06    0.24      ✓      
+Parahippocampal gyrus     cortical      -9.028e-03  -8.186e-03    1.10      ✓      
+Precuneus                 cortical      -5.852e-03  -4.634e-03    1.26      ✓      
+Lingual gyrus             cortical      -4.625e-03  -5.135e-03    0.90      ✓      
+Caudal anterior cingulate cortical      -3.051e-03   3.334e-03    0.92      ✗      
+Superior frontal          cortical      -2.420e-03   1.331e-03    1.82      ✗      
+Entorhinal cortex         cortical      -1.001e-03   3.179e-03    0.31      ✗      
+
+FULL-PANEL FDR-SIGNIFICANT FINDINGS (harmonized data)
+
+ROI                       Tissue          d_adj_5y   p_fdr_tissue   sig
+------------------------------------------------------------------------
+Amygdala                  subcortical       -1.174         0.0010    **
+Caudate                   subcortical       -1.118         0.0010    **
+Putamen                   subcortical       -0.990         0.0030    **
+Hippocampus               subcortical       -0.837         0.0109     *

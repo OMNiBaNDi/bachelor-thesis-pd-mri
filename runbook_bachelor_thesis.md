@@ -762,7 +762,6 @@ Written to `$WORK/outputs/stage_c_analyze/`:
 - `cohort_long_harmonized.csv` — long format, joined with scanner
   metadata.
 - `cohort_long_unharmonized.csv` — Risk-A reference.
-- `interval_summary.csv` — per-subject elapsed-time table.
 - `longcombat_diagnostics.csv` — per-feature longCombat status,
   batch-R² before/after, feature lists.
 - `longcombat_summary.txt` — compact text summary.
@@ -839,3 +838,30 @@ Figures:
 - `figure_risk_a_scatter_supp.png` — Risk-A scatter (harmonized vs
   unharmonized β).
 - `figure_lme_diagnostics_test_b_supp.png` — LME diagnostics panel.
+
+### 15.3 Outputs published to the repository
+
+Stage B and Stage C outputs are mirrored from Gorina1 to the public
+repository under `metadata/analysis/stage_b_extract/`,
+`metadata/analysis/stage_c_analyze/`, and `artifacts/analysis/`.
+
+Three Stage C files are withheld: `cohort_long_harmonized.csv` and
+`cohort_long_unharmonized.csv`. Each row in these files contains
+`Site`, `PatientSex_clinical`, `age_at_BL`, `BatchID`, and
+`Years_from_BL` alongside the ROI value. In a cohort of 67 PD + 33
+controls across three hospitals, this combination acts as a
+quasi-identifier and is therefore not made public.
+
+The other Stage C file that was witheld: `interval_summary.csv`.  
+Because it contains the date of each subjects scan, so to be safe it
+is not included.
+
+Stage A outputs (`cohort.csv`, `dicom_inventory_all.csv`,
+`scanner_metadata.csv`, `clinical_covariates.csv`,
+`scanner_metadata_with_covariates.csv`) are withheld for the same
+reason. These files carry per-subject combinations of site, sex, age,
+scan dates, and DICOM-derived acquisition metadata.
+
+The published Stage B and Stage C tables retain only the anonymous
+study identifier and the corresponding measurement or model output,
+without demographic covariates on the same row.

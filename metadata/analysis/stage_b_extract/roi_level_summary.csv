@@ -1,0 +1,25 @@
+ROI,Tissue,Cluster,Measure,Delta_Window,mean_delta_abs,sd_delta_abs,mean_delta_pct,sd_delta_pct,n
+Accumbens,subcortical,basal_ganglia,volume_norm,BL→3Y,0.0000119216,0.0000267690,3.5625315578,8.3995883606,100
+Accumbens,subcortical,basal_ganglia,volume_norm,BL→5Y,0.0000068697,0.0000265434,1.8652676255,8.8697133238,100
+Amygdala,subcortical,limbic_mtl,volume_norm,BL→3Y,-0.0000973573,0.0000545623,-9.1209458519,5.0746456306,100
+Amygdala,subcortical,limbic_mtl,volume_norm,BL→5Y,-0.0001222606,0.0000581150,-11.5760395643,5.9705796363,100
+Caudal anterior cingulate,cortical,frontal,thickness_mm,BL→3Y,-0.1131650000,0.1059241451,-4.6041167022,4.3039255568,100
+Caudal anterior cingulate,cortical,frontal,thickness_mm,BL→5Y,-0.1122850000,0.0859098440,-4.5650706090,3.5051351680,100
+Caudate,subcortical,basal_ganglia,volume_norm,BL→3Y,-0.0000012275,0.0000704601,-0.0600471510,3.2300582407,100
+Caudate,subcortical,basal_ganglia,volume_norm,BL→5Y,-0.0000229542,0.0000860258,-1.0301811266,3.7425360435,100
+Entorhinal cortex,cortical,limbic_mtl,thickness_mm,BL→3Y,-0.1668300000,0.1488145280,-5.1635353483,4.8605223214,100
+Entorhinal cortex,cortical,limbic_mtl,thickness_mm,BL→5Y,-0.1681900000,0.1633665362,-5.1969120263,5.3671996989,100
+Hippocampus,subcortical,limbic_mtl,volume_norm,BL→3Y,-0.0001664017,0.0001443487,-6.2287631023,5.0890076313,100
+Hippocampus,subcortical,limbic_mtl,volume_norm,BL→5Y,-0.0002193803,0.0001529721,-8.4318567676,5.7525968672,100
+Lingual gyrus,cortical,posterior_cortex,thickness_mm,BL→3Y,-0.0685150000,0.0660589519,-3.4627395736,3.3182853920,100
+Lingual gyrus,cortical,posterior_cortex,thickness_mm,BL→5Y,-0.0764400000,0.0644575375,-3.8533239676,3.2436632976,100
+Parahippocampal gyrus,cortical,limbic_mtl,thickness_mm,BL→3Y,-0.1411450000,0.1089148100,-5.4727901776,4.3042681718,100
+Parahippocampal gyrus,cortical,limbic_mtl,thickness_mm,BL→5Y,-0.1414150000,0.1131789290,-5.4396738414,4.3469310515,100
+Precuneus,cortical,posterior_cortex,thickness_mm,BL→3Y,-0.0543750000,0.0671748200,-2.3498253267,2.8856787620,100
+Precuneus,cortical,posterior_cortex,thickness_mm,BL→5Y,-0.0717750000,0.0672020688,-3.1258725006,2.8675263040,100
+Putamen,subcortical,basal_ganglia,volume_norm,BL→3Y,-0.0000013423,0.0001321438,-0.1031165865,4.7568092306,100
+Putamen,subcortical,basal_ganglia,volume_norm,BL→5Y,-0.0000349618,0.0001639800,-1.2212299857,5.8382573937,100
+Superior frontal,cortical,frontal,thickness_mm,BL→3Y,-0.1192550000,0.0774693649,-4.5888754481,2.9297307772,100
+Superior frontal,cortical,frontal,thickness_mm,BL→5Y,-0.1496450000,0.0801004513,-5.7700396181,3.0562247012,100
+Thalamus,subcortical,basal_ganglia,volume_norm,BL→3Y,-0.0002946447,0.0001728522,-6.2155755131,3.7441989540,100
+Thalamus,subcortical,basal_ganglia,volume_norm,BL→5Y,-0.0003687547,0.0001354902,-7.7727758468,2.6449684118,100

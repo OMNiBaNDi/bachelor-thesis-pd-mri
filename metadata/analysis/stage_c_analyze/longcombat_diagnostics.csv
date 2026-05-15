@@ -1,0 +1,25 @@
+section,feature,block,n_input,n_used,n_dropped_missing,status,var_explained_by_batch_before,var_explained_by_batch_after,formula_used,interaction_with,features_in_block,block_n_used
+cohort_wide,Left-Putamen,subcortical,300,300,0,ok,0.0136,0.0142,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Right-Putamen,subcortical,300,300,0,ok,0.0086,0.0115,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Left-Caudate,subcortical,300,300,0,ok,0.0255,0.0033,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Right-Caudate,subcortical,300,300,0,ok,0.0029,0.0057,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Left-Hippocampus,subcortical,300,300,0,ok,0.1032,0.0327,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Right-Hippocampus,subcortical,300,300,0,ok,0.1024,0.0318,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Left-Amygdala,subcortical,300,300,0,ok,0.0801,0.0265,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Right-Amygdala,subcortical,300,300,0,ok,0.131,0.033,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Left-Accumbens-area,subcortical,300,300,0,ok,0.1272,0.0162,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Right-Accumbens-area,subcortical,300,300,0,ok,0.0449,0.0164,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Left-Thalamus,subcortical,300,300,0,ok,0.0912,0.0249,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cohort_wide,Right-Thalamus,subcortical,300,300,0,ok,0.0794,0.0226,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,lh:entorhinal,cortical,300,300,0,ok,0.0716,0.0024,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,lh:parahippocampal,cortical,300,300,0,ok,0.0673,0.0017,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,lh:precuneus,cortical,300,300,0,ok,0.077,0.0117,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,lh:lingual,cortical,300,300,0,ok,0.186,0.0048,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,lh:caudalanteriorcingulate,cortical,300,300,0,ok,0.1505,0.0061,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,lh:superiorfrontal,cortical,300,300,0,ok,0.2836,0.045,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,rh:entorhinal,cortical,300,300,0,ok,0.0793,0.0037,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,rh:parahippocampal,cortical,300,300,0,ok,0.1077,0.0019,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,rh:precuneus,cortical,300,300,0,ok,0.1299,0.0194,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,rh:lingual,cortical,300,300,0,ok,0.1306,0.0091,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,rh:caudalanteriorcingulate,cortical,300,300,0,ok,0.087,0.0039,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300
+cortical,rh:superiorfrontal,cortical,300,300,0,ok,0.2238,0.033,Years_from_BL * Group_clinical + age_at_BL + PatientSex_clinical,Group_clinical,12,300

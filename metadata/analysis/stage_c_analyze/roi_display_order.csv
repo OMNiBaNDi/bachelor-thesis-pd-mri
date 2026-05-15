@@ -1,0 +1,13 @@
+ROI,Tissue,ordering_rank
+Amygdala,subcortical,0
+Caudate,subcortical,1
+Putamen,subcortical,2
+Hippocampus,subcortical,3
+Thalamus,subcortical,4
+Accumbens,subcortical,5
+Parahippocampal gyrus,cortical,0
+Precuneus,cortical,1
+Lingual gyrus,cortical,2
+Caudal anterior cingulate,cortical,3
+Superior frontal,cortical,4
+Entorhinal cortex,cortical,5
